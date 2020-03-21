@@ -10,8 +10,8 @@
       </thead>
       <tbody>
         <tr v-for="row in rows" :key="row.id">
-          <td v-for="me in columns" v-bind:key="me.id">
-            {{ row[me["caption"]] }}
+          <td v-for="colmCap in columns" v-bind:key="colmCap.id">
+            {{ row[colmCap["caption"]] }}
           </td>
         </tr>
       </tbody>
