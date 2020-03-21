@@ -1,0 +1,67 @@
+{
+    "uuid": "2373-7733-4833-4444",
+    "name": "Human Resources",
+    "description": "HR Sample Workbase",
+    "documentation": "",
+    "icon": "icon-people",
+    "themeColor": "blue",
+    "createdBy": "6353-6533-6536-7737",
+    "createdOn": "2020-02-10",
+    "schema": {
+        "worktables": {
+            "employees": {
+                "uuid": "6532-8383-7633-6333",
+                "description": "holds a list of company employees",
+                "icon": "icon-person",
+                "columns": {
+                    "6477-8782-7373-7333": {
+                        "caption": "Employee Name",
+                        "type": "text",
+                        "description": "Employee full name",
+                        "validation": {},
+                        "styleRules": {},
+                        "options": {}
+                    },
+                    "6477-8782-7373-7320": {
+                        "caption": "Email Address",
+                        "type": "email",
+                        "description": "Employee email address",
+                        "validation": {},
+                        "styleRules": {},
+                        "options": {}
+                    },
+                    "6477-8782-7373-7318": {
+                        "caption": "Salary",
+                        "type": "currency",
+                        "description": "Employee's last salary",
+                        "validation": {},
+                        "styleRules": {},
+                        "options": {}
+                    },
+                    "6477-8782-7373-7328": {
+                        "caption": "DOB",
+                        "type": "date",
+                        "description": "Employee's date of birth",
+                        "validation": {},
+                        "styleRules": {},
+                        "options": {}
+                    },
+                    "6477-8782-7373-7319": {
+                        "caption": "IP adress",
+                        "type": "text",
+                        "description": "Employee's last salary",
+                        "validation": {},
+                        "styleRules": {},
+                        "options": {}
+                    }
+                },
+                "views": {
+                    "default": {
+                        "collaborationType": "collaborative",
+                        "type": "grid"
+                    }
+                }
+            }
+        }
+    }
+}
