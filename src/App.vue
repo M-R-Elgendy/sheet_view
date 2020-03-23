@@ -9,6 +9,9 @@
 </template>
 
 <style lang="scss">
+body{
+  background-color: #eee!important;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -14,7 +14,7 @@
             :createdOn="createdOn"
           />
           <br />
-          <dataTable :columns="columns" :rows="rows"/>
+          <dataTable :columns="columns" :rows="rows" />
         </div>
       </div>
     </div>
