@@ -18,6 +18,12 @@
 
 <script>
 export default {
+  data: function() {
+    return {
+      user_Name: ""
+    };
+  },
+
   props: [
     "uuid",
     "name",

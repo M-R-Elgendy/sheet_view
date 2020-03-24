@@ -1,8 +1,17 @@
 <template>
   <div class="sheet">
+
+    <div id="nav">
+      <!-- <router-link to="/">Home</router-link> | -->
+      <router-link to="/sheet">Sheet view</router-link>
+    </div>
+
+
     <div class="container">
       <div class="row">
         <div class="col-12">
+          <h2 class="text-left">Welcome: Mohamed</h2>
+          <br>
           <sheetProperties
             :uuid="uuid"
             :name="name"
