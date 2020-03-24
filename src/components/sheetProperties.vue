@@ -1,5 +1,9 @@
 <template>
   <div class="row col-12">
+    <div class="col-12 text-left">
+      <h2 class="text-left">Welcome: {{ userName }}</h2>
+      <br />
+    </div>
     <div calss="col-6 text-left" style="flex:auto; text-align:left;">
       <p>Sheet uuid: {{ uuid }}</p>
       <p>Sheet name: {{ name }}</p>
@@ -20,10 +24,15 @@
 export default {
   data: function() {
     return {
-      user_Name: ""
+      userName: ""
     };
   },
 
+  mounted() {
+    if (localStorage.user_name) {
+      this.userName = localStorage.user_name;
+    }
+  },
   props: [
     "uuid",
     "name",

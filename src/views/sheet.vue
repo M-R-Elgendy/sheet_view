@@ -1,17 +1,13 @@
 <template>
   <div class="sheet">
-
     <div id="nav">
       <!-- <router-link to="/">Home</router-link> | -->
       <router-link to="/sheet">Sheet view</router-link>
     </div>
 
-
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-left">Welcome: Mohamed</h2>
-          <br>
           <sheetProperties
             :uuid="uuid"
             :name="name"
@@ -38,6 +34,13 @@ import JsonFile from "../json/workbase-schema.json";
 import RowFile from "../json/sheetRows.json";
 
 export default {
+  mounted() {
+    if (!localStorage.user_name) {
+      alert("no User name, Plz log in first");
+      window.location.href = "../"
+    }
+  },
+
   data: function() {
     return {
       uuid: JsonFile["uuid"],

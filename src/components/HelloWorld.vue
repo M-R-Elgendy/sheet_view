@@ -76,8 +76,17 @@
               for="Email"
               class="col-6 alert-danger"
               style="margin-top:5px; margin-left:25%; color:red;"
-              >{{ passMsg }}</label
+              >{{ passNotMatch }}</label
             >
+
+            <label
+              v-if="pass1 == pass2 && pass1.length < 8"
+              for="Email"
+              class="col-6 alert-danger"
+              style="margin-top:5px; margin-left:25%; color:red;"
+              >{{ passLessThan8 }}</label
+            >
+
           </div>
           <!-- :disabled="isDisabled" -->
           <div class="form-group">
@@ -92,13 +101,13 @@
             </label>
             <br />
 
-            <input
+           <router-link to="/sheet"> <input
               :disabled="isDisabled"
               class="btn btn-primary "
               type="submit"
               name="register"
               value="Register"
-            />
+            /></router-link>
           </div>
         </form>
       </div>
@@ -107,27 +116,34 @@
 </template>
 
 <script>
+const STORAGE_KEY = "user_name";
 export default {
   data: function() {
     return {
       pass1: "",
       pass2: "",
       terms: false,
-      passMsg: "Password dosenot match",
-userName: ''
-     
+      userName: "",
+      passNotMatch: "Password dose not match",
+      passLessThan8: 'Password Must be more than 8'
     };
   },
 
   computed: {
     isDisabled: function() {
       return !this.terms;
-    },
+    }
   },
 
   watch: {
+    userName: function() {
+      return localStorage.setItem(STORAGE_KEY, String(this.userName));
+    },
+
     terms: function() {
-      if (this.pass2 == this.pass1 && this.terms == true && this.pass1 !== "") {
+
+      
+      if (this.pass2 == this.pass1 && this.pass1.length >= 8) {
         return (this.terms = true);
       } else {
         return (this.terms = false);
@@ -135,7 +151,7 @@ userName: ''
     },
 
     pass1: function() {
-      if (this.pass2 == this.pass1 && this.pass1 !== "") {
+      if (this.pass2 == this.pass1 && this.pass1.length >= 8) {
         return (this.terms = true);
       } else {
         return (this.terms = false);
@@ -143,7 +159,7 @@ userName: ''
     },
 
     pass2: function() {
-      if (this.pass2 == this.pass1 && this.pass1 !== "") {
+     if (this.pass2 == this.pass1 && this.pass1.length >= 8) {
         return (this.terms = true);
       } else {
         return (this.terms = false);
